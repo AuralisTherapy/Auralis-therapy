@@ -1,0 +1,21 @@
+{
+  "name": "Auralis Therapy",
+  "short_name": "Auralis",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#b49e73",
+  "description": "Luxury mobile massage therapy at home",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-large.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

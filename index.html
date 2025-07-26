@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta name="google-site-verification" content="google26bfe1034869880a.html" />
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Auralis Therapy - Full Luxury Experience</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Lora&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --dark: #1a1a1a;
+      --gold: #b49e73;
+      --cream: #f4f1eb;
+      --glass: rgba(255, 255, 255, 0.08);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Lora', serif;
+      background: linear-gradient(to bottom, rgba(18, 18, 18, 0.75), rgba(30, 30, 30, 0.75)),
+                  url('spa-background-ai.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: var(--cream);
+      overflow-x: hidden;
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      margin-bottom: 30px;
+      color: var(--gold);
+    }
+    .text-center {
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #d4caba;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px 40px;
+      font-family: 'Playfair Display', serif;
+    }
+    header h1 {
+      font-size: 52px;
+      color: var(--gold);
+    }
+    header p {
+      font-size: 20px;
+      margin-top: 20px;
+      color: #e8ddcb;
+    }
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .card {
+      background: var(--glass);
+      border-radius: 24px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.05);
+      width: 280px;
+      color: #fff;
+    }
+    .card h3 {
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+    .price {
+      font-weight: bold;
+      color: var(--gold);
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      font-size: 16px;
+      border-radius: 50px;
+      padding: 14px 20px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+      font-family: 'Lora', serif;
+    }
+    input, select, button {
+      padding: 10px;
+      margin: 10px auto;
+      width: 90%;
+      max-width: 320px;
+      border-radius: 10px;
+      border: none;
+      display: block;
+    }
+    button {
+      background: var(--gold);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #aaa;
+      background: rgba(0,0,0,0.4);
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+<div style="text-align:center; margin-top: 20px;">
+<img alt="Auralis Therapy Logo" src="https://imgur.com/A8gXgXi.png" style="width: 220px; border-radius: 16px;"/>
+</div>
+<header>
+<h1>Auralis Therapy</h1>
+<p>A private ritual of well-being. Where luxury and soul meet.</p>
+</header>
+<section class="section" style="background: rgba(255,255,255,0.05); border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.2); padding: 40px;">
+<h2 class="section-title" style="color: #f0d8aa;">How are you feeling today?</h2>
+<p style="text-align:center; font-size: 18px; color: #ddd; margin-bottom: 20px;">Select your current mood and we'll suggest the perfect massage experience.</p>
+<div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;">
+<button onclick="recommendMassage('tired')" style="background:#cba76e;color:white;border:none;padding:10px 18px;border-radius:25px;cursor:pointer;font-size:14px;">Tired</button>
+<button onclick="recommendMassage('stressed')" style="background:#cba76e;color:white;border:none;padding:10px 18px;border-radius:25px;cursor:pointer;font-size:14px;">Stressed</button>
+<button onclick="recommendMassage('romantic')" style="background:#cba76e;color:white;border:none;padding:10px 18px;border-radius:25px;cursor:pointer;font-size:14px;">Romantic</button>
+<button onclick="recommendMassage('energized')" style="background:#cba76e;color:white;border:none;padding:10px 18px;border-radius:25px;cursor:pointer;font-size:14px;">Energized</button>
+</div>
+<p id="mood-recommendation" style="margin-top:25px; text-align:center; color:#f0d8aa; font-size:18px; font-style:italic;"></p>
+</section>
+<section class="section">
+<h2 class="section-title">Mission &amp; Vision</h2>
+<p class="text-center">At Auralis Therapy, our mission is to deliver personalized therapeutic experiences that nourish both the body and the soul. Our vision is to become a symbol of peace and wellness in every home we visit, creating a space of luxury, trust, and transformation</p>
+</section>
+<section class="section">
+<h2 class="section-title">What Massage Does for You</h2>
+<p class="text-center">Scientific studies show that massage therapy reduces cortisol levels, lowers blood pressure, boosts immunity, and enhances sleep quality. It also helps reduce anxiety, chronic pain, and improves overall circulation and mental clarity.</p>
+</section>
+<section class="section">
+<h2 class="section-title">Services</h2>
+<div class="card-grid">
+<div class="card"><h3>Deep Tissue</h3><p>Intense therapy for chronic tension</p>
+<div style="display:flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+<button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20a%2060%20min%20-%20$79%20massage','_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;">60 min - $79</button>
+<button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20a%2090%20min%20-%20$139%20massage','_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;">90 min - $139</button>
+<button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20a%20120%20min%20-%20$199%20massage','_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;">120 min - $199</button>
+</div>
+</div>
+<div class="card"><h3>Swedish</h3><p>Gentle full-body relaxation</p>
+<div style="display:flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+<button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20a%2060%20min%20-%20$79%20massage','_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;">60 min - $79</button>
+<button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20a%2090%20min%20-%20$139%20massage','_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;">90 min - $139</button>
+<button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20a%20120%20min%20-%20$199%20massage','_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;">120 min - $199</button>
+</div>
+</div>
+<div class="card"><h3>Sports</h3><p>Recovery for active lifestyles</p>
+<div style="display:flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+<button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20a%2060%20min%20-%20$79%20massage','_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;">60 min - $79</button>
+<button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20a%2090%20min%20-%20$139%20massage','_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;">90 min - $139</button>
+<button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20a%20120%20min%20-%20$199%20massage','_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;">120 min - $199</button>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Add-ons</h2>
+<div class="card-grid">
+<div class="card" style=" text-align:center;"><h3 style="margin-bottom: 10px; font-size: 18px;">CBD Therapy</h3><p style="font-size: 16px; color: #f0d8aa; font-weight: bold;">$15</p><button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20add%20the%20CBD%20Therapy', '_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;">Add CBD Therapy</button></div>
+<div class="card" style=" text-align:center;"><h3 style="margin-bottom: 10px; font-size: 18px;">Hot Stone</h3><p style="font-size: 16px; color: #f0d8aa; font-weight: bold;">$10</p><button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20add%20the%20Hot%20Stone', '_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;">Add Hot Stone</button></div>
+<div class="card" style=" text-align:center;"><h3 style="margin-bottom: 10px; font-size: 18px;">Aromatherapy</h3><p style="font-size: 16px; color: #f0d8aa; font-weight: bold;">$5</p><button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20add%20the%20Aromatherapy', '_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;">Add Aromatherapy</button></div>
+<div class="card" style=" text-align:center;"><h3 style="margin-bottom: 10px; font-size: 18px;">Foot Scrub</h3><p style="font-size: 16px; color: #f0d8aa; font-weight: bold;">$10</p><button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20add%20the%20Foot%20Scrub', '_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;">Add Foot Scrub</button></div>
+<div class="card" style=" text-align:center;"><h3 style="margin-bottom: 10px; font-size: 18px;">Face Massage</h3><p style="font-size: 16px; color: #f0d8aa; font-weight: bold;">$10</p><button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20add%20the%20Face%20Massage', '_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;">Add Face Massage</button></div>
+
+<div class="card" style=" text-align:center;">
+<h3 style="margin-bottom: 10px; font-size: 18px;">Cupping Therapy</h3>
+<p style="font-size: 16px; color: #f0d8aa; font-weight: bold;">$40</p>
+<button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20add%20the%20Cupping%20Therapy', '_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;">Add Cupping Therapy</button>
+</div>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Couple Massages</h2>
+<div class="card-grid">
+<div class="card" style="background: rgba(255, 192, 203, 0.15); border-radius: 20px; box-shadow: 0 0 15px rgba(0,0,0,0.1); padding: 24px; text-align: center;"><h3 style="color: #f7c7d9;">Relax Duo</h3><p>Side-by-side therapy at home</p><p style="font-size: 15px; color: #ddd; margin: 10px 0;">Share a soothing 60-minute full-body massage in the comfort of your home.</p><p class="price">$150</p><button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20the%20Relax%20Duo', '_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;">Book Relax Duo</button></div>
+<div class="card" style="background: rgba(255, 192, 203, 0.15); border-radius: 20px; box-shadow: 0 0 15px rgba(0,0,0,0.1); padding: 24px; text-align: center;"><h3 style="color: #f7c7d9;">Romantic Escape</h3><p>Wine, roses &amp; ambiance</p><p style="font-size: 15px; color: #ddd; margin: 10px 0;">Enjoy a couple's massage with aromatherapy and rose-scented oils for a deep emotional connection.</p><p class="price">$180</p><button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20the%20Romantic%20Escape', '_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;">Book Romantic Escape</button></div>
+<div class="card" style="background: rgba(255, 192, 203, 0.15); border-radius: 20px; box-shadow: 0 0 15px rgba(0,0,0,0.1); padding: 24px; text-align: center;"><h3 style="color: #f7c7d9;">Seasonal Special</h3><p>Limited-time rituals</p><p style="font-size: 15px; color: #ddd; margin: 10px 0;">Celebrate love with themed couples’ experiences that change with each season.</p><p class="price">$200</p><button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20the%20Seasonal%20Special', '_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;">Book Seasonal Special</button></div>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Memberships</h2>
+<div class="card-grid">
+<div class="card" style="background: #C9B03722; border-left: 5px solid #C9B037; border-radius: 16px; padding: 24px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); text-align:center;"><h3 style="color: white; font-weight: bold; font-size: 20px;">Gold</h3><p>1 massage/month + 10% off</p><p style="font-size: 15px; color: #ddd; margin: 10px 0;">Enjoy personalized care tailored to your needs.</p><p class="price">$149</p><button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20the%20Gold', '_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;">Book Gold</button></div>
+<div class="card" style="background: #B4B4B422; border-left: 5px solid #B4B4B4; border-radius: 16px; padding: 24px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); text-align:center;"><h3 style="color: white; font-weight: bold; font-size: 20px;">Luxury</h3><p>2 massages/month + 1 add-on</p><p style="font-size: 15px; color: #ddd; margin: 10px 0;">Enjoy personalized care tailored to your needs.</p><p class="price">$199</p><button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20the%20Luxury', '_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;">Book Luxury</button></div>
+<div class="card" style="background: #A5716422; border-left: 5px solid #A57164; border-radius: 16px; padding: 24px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); text-align:center;"><h3 style="color: white; font-weight: bold; font-size: 20px;">Elite</h3><p>3 massages/month + VIP</p><p style="font-size: 15px; color: #ddd; margin: 10px 0;">Enjoy personalized care tailored to your needs.</p><p class="price">$249</p><button onclick="window.open('https://wa.me/8097148933?text=I%20want%20to%20book%20the%20Elite', '_blank')" style="background:#b49e73;color:white;border:none;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;">Book Elite</button></div>
+</div>
+</section>
+<a class="whatsapp-button" href="https://wa.me/18097148933?text=I'd%20like%20to%20book%20a%20massage">💬 WhatsApp</a>
+<section class="section">
+<h2 class="section-title">Book Your Massage</h2>
+<form onsubmit="return sendSMS();">
+<input id="name" placeholder="Your Name" required="" type="text"/>
+<input id="phone" placeholder="Phone Number" required="" type="tel"/>
+<select id="service" required="">
+<option value="">Select a Service</option>
+<option>Deep Tissue</option>
+<option>Swedish</option>
+<option>Couples Massage</option>
+</select>
+<select id="duration" required="">
+<option value="">Duration</option>
+<option>60 min - $79</option>
+<option>90 min - $139</option>
+<option>120 min - $199</option>
+</select>
+<button type="submit">Send SMS</button>
+</form>
+</section><section class="section">
+<h2 class="section-title">Contact Us</h2>
+<p class="text-center">
+    WhatsApp: +1 (809) 714-8933<br/>
+    SMS / Calls: +1 (239) 503-2321<br/>
+    Email: therapyauralis@gmail.com
+  </p>
+</section><footer>
+  Auralis Therapy LLC © 2025 — Luxury meets care.
+
+<section class="section">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="text-center">
+<p>Do you offer services for elderly clients?
+Yes, we specialize in working with elderly clients. Our therapists are trained in techniques tailored to senior needs, ensuring every session is gentle, safe, and deeply comforting. You are always in expert hands.</p><br/>
+<p>Is it only at-home service?
+Yes, we provide premium home service in Naples, FL. A $10 home visit fee applies.</p><br/>
+<p>What is the cancellation policy?
+You can cancel or reschedule up to 12 hours in advance with no penalty.</p><br/>
+<p>What payment methods do you accept?
+We accept cash, card, and transfers upon booking or service completion.</p>
+</div>
+</section>
+</footer>
+<script>
+function sendSMS() {
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const service = document.getElementById("service").value;
+  const duration = document.getElementById("duration").value;
+  const msg = `Hello, my name is ${name}. I'd like to book a ${service} for ${duration}. You can reach me at ${phone}.`;
+  const smsLink = `sms:+12395032321?body=${encodeURIComponent(msg)}`;
+  window.open(smsLink, '_blank');
+  return false;
+}
+</script>
+<script>
+function recommendMassage(mood) {
+  const rec = {
+    tired: "We recommend the Deep Tissue Massage with CBD Therapy.",
+    stressed: "Try Aromatherapy with Hot Stone to restore your inner calm.",
+    romantic: "Book our Romantic Escape Couple Massage Package.",
+    energized: "Opt for a revitalizing Body Gua Sha and Face Massage combo."
+  };
+  document.getElementById('mood-recommendation').innerText = rec[mood];
+}
+</script>
+<section class="section" style="text-align:center; padding: 20px;">
+<h2 style="color: #f0d8aa;">Follow us</h2>
+<div style="margin-top: 10px;">
+<a href="https://www.instagram.com/auralistherapy" style="margin: 10px; color: #f0d8aa; text-decoration:none; font-size:18px;" target="_blank">Instagram</a>
+<a href="https://www.facebook.com/share/1Hvjbx9m1X/" style="margin: 10px; color: #f0d8aa; text-decoration:none; font-size:18px;" target="_blank">Facebook</a>
+</div>
+</section>
+<div style="text-align:center; margin: 40px 0 20px;">
+<img alt="Auralis Therapy Logo" src="https://imgur.com/A8gXgXi.png" style="width: 220px; border-radius: 16px;"/>
+</div>
+</body>
+</html>
